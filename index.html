@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="OVA interactivo para aprender sobre el departamento de Córdoba y sus municipios.">
+<title>Exploradores de Córdoba</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<header class="encabezado">
+  <a href="#inicio" class="logo">🌴 Exploradores de Córdoba</a>
+  <nav>
+    <a href="#inicio">Inicio</a><a href="#video">Video</a><a href="#explorar">Aprender</a>
+    <a href="#municipios">Municipios</a><a href="#cultura">Cultura</a><a href="#actividades">Jugar</a><a href="#creditos">Créditos</a>
+  </nav>
+</header>
+<div class="vueltiao" aria-hidden="true"></div>
+
+<main>
+<section id="inicio" class="portada">
+  <div class="portada-contenido">
+    <span class="etiqueta">¡Una aventura por nuestra tierra!</span>
+    <h1>Descubramos nuestro departamento y sus municipios</h1>
+    <p>Navega por el río Sinú, visita pueblos con historia y conviértete en un gran explorador de Córdoba.</p>
+    <a href="#video" class="boton">¡Comenzar aventura! 🚀</a>
+  </div>
+  <div class="guia">
+    <div class="burbuja">¡Hola! Soy <b>Lorito</b>, tu guía. ¡Vamos a ganar estrellas! ⭐</div>
+    <div class="lorito" aria-hidden="true">🦜</div>
+  </div>
+</section>
+
+<section class="datos" aria-label="Datos rápidos">
+  <div class="dato d1"><b>30</b>municipios</div>
+  <div class="dato d2"><b>1951</b>año de creación</div>
+  <div class="dato d3"><b>+400 km</b>de río Sinú</div>
+  <div class="dato d4"><b>1777</b>fundación de Montería</div>
+</section>
+
+<section id="video" class="seccion">
+  <div class="titulo-seccion">
+    <span class="etiqueta">Primera misión</span>
+    <h2>🎬 Conozcamos Córdoba</h2>
+    <p>Mira el video con mucha atención y luego responde.</p>
+  </div>
+  <div class="video-contenedor">
+    <iframe src="https://www.youtube.com/embed/ZXk2GOt_YqE" title="Córdoba para niños: geografía, economía y cultura" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+  <div class="pregunta-video">
+    <h3>💡 ¡Comprueba lo que aprendiste!</h3>
+    <p>¿Cuál es la capital del departamento de Córdoba?</p>
+    <div class="opciones">
+      <button class="opcion" onclick="responderVideo('Sincelejo')">A. Sincelejo</button>
+      <button class="opcion" onclick="responderVideo('Montería')">B. Montería</button>
+      <button class="opcion" onclick="responderVideo('Cartagena')">C. Cartagena</button>
+    </div>
+    <p id="resultado-video" class="mensaje" aria-live="polite"></p>
+  </div>
+</section>
+
+<section id="explorar" class="seccion seccion-color">
+  <div class="titulo-seccion">
+    <span class="etiqueta">Aprendamos juntos</span>
+    <h2>🗺️ Exploremos nuestro departamento</h2>
+    <p>Seis datos para convertirte en experto.</p>
+  </div>
+  <div class="tarjetas">
+    <article class="tarjeta"><div class="icono-tarjeta">📍</div><h3>¿Dónde está Córdoba?</h3>
+      <p>Está en el norte de Colombia, en la región Caribe. Limita con el mar Caribe y con los departamentos de Sucre, Bolívar y Antioquia. Tiene unos 25.000 km² de llanuras, selvas, ciénagas y costa.</p></article>
+    <article class="tarjeta"><div class="icono-tarjeta">🏙️</div><h3>Nuestra capital</h3>
+      <p>Montería, llamada «La Perla del Sinú», fue fundada en 1777 por Antonio de la Torre y Miranda, en 1923 se constituyó oficialmente como municipio, Y En 1952, con la creación del departamento de Córdoba, se designó como la capital departamental. Está a orillas del río Sinú y es el centro de la ganadería y el comercio de la región.</p></article>
+    <article class="tarjeta"><div class="icono-tarjeta">🌊</div><h3>El río Sinú</h3>
+      <p>Nace en el Nudo de Paramillo, recorre el departamento de sur a norte y desemboca en el mar Caribe, en la bahía de Cispatá. Sus aguas dan vida a pueblos, cultivos y ciénagas.</p></article>
+    <article class="tarjeta"><div class="icono-tarjeta">🏘️</div><h3>Los 30 municipios</h3>
+      <p>Córdoba se organiza en 30 municipios. Algunos están en las sabanas, otros junto al río Sinú, en la selva del Alto Sinú, en las ciénagas o frente al mar.</p></article>
+    <article class="tarjeta"><div class="icono-tarjeta">🐄</div><h3>¿De qué vive Córdoba?</h3>
+      <p>Ganadería, agricultura (maíz, arroz, yuca, ñame y algodón), pesca y minería. En Montelíbano está la mina de níquel de Cerro Matoso.</p></article>
+    <article class="tarjeta"><div class="icono-tarjeta">🦜</div><h3>Naturaleza</h3>
+      <p>Tiene el Parque Nacional Natural Paramillo, la ciénaga de Ayapel, los manglares de Cispatá y playas en la costa. Allí viven aves, peces, tortugas y cocodrilos.</p></article>
+  </div>
+</section>
+
+<section id="municipios" class="seccion">
+  <div class="titulo-seccion">
+    <span class="etiqueta">Viajemos por Córdoba</span>
+    <h2>🧭 Visita un municipio</h2>
+    <p>Toca un lugar para saber qué lo hace especial.</p>
+  </div>
+  <div class="explorador">
+    <div id="lista-municipios" class="chips" role="tablist"></div>
+    <div id="ficha" class="ficha" aria-live="polite"></div>
+  </div>
+</section>
+
+<section id="cultura" class="seccion seccion-color">
+  <div class="titulo-seccion">
+    <span class="etiqueta">Orgullo cordobés</span>
+    <h2>🎶 Cultura, fiestas y sabores</h2>
+    <p>Lo que nos hace únicos.</p>
+  </div>
+  <div class="tarjetas tres">
+    <article class="tarjeta"><div class="icono-tarjeta">👒</div><h3>Sombrero vueltiao</h3>
+      <p>Lo crearon los indígenas zenú, tejiendo caña flecha en trenzas blancas y negras. Es símbolo cultural de Colombia. Se teje en Tuchín y en otros pueblos zenú.</p></article>
+    <article class="tarjeta"><div class="icono-tarjeta">🎺</div><h3>El porro y el fandango</h3>
+      <p>El porro es un ritmo de bandas de viento, con clarinetes, trompetas y tambores. En junio se celebra el Festival Nacional del Porro en San Pelayo.</p></article>
+    <article class="tarjeta"><div class="icono-tarjeta">🍲</div><h3>Comida típica</h3>
+      <p>Mote de queso, arroz con coco, bollo de yuca, carimañolas, suero costeño y sancocho de bocachico. ¿Cuál quieres probar primero?</p></article>
+  </div>
+</section>
+
+<section id="actividades" class="seccion">
+  <div class="titulo-seccion">
+    <span class="etiqueta">¡Llegó la hora de jugar!</span>
+    <h2>🎯 Reto de los exploradores</h2>
+    <p>Responde 10 preguntas, aprende de tus errores y gana estrellas.</p>
+  </div>
+  <div class="juego">
+    <div class="juego-cabecera">
+      <span id="progreso">Pregunta 1 de 10</span>
+      <span>⭐ Puntos: <strong id="puntos">0</strong></span>
+    </div>
+    <div class="barra-progreso"><div id="barra" class="barra"></div></div>
+    <h3 id="pregunta">Preparando tu primera pregunta...</h3>
+    <div id="opciones-juego" class="opciones"></div>
+    <p id="retroalimentacion" class="mensaje" aria-live="polite"></p>
+    <button id="siguiente" class="boton" hidden>Siguiente pregunta ➜</button>
+    <div id="final-juego" hidden>
+      <h3>🎉 ¡Misión completada!</h3>
+      <div id="estrellas" class="estrellas" aria-hidden="true"></div>
+      <p id="resumen-final"></p>
+      <button id="reiniciar" class="boton">Volver a jugar 🔄</button>
+    </div>
+  </div>
+</section>
+
+<section class="cierre">
+  <h2>💚 ¡Córdoba es nuestra tierra!</h2>
+  <p>Estos son los 30 municipios que ya conoces:</p>
+  <div id="todos" class="chips claros"></div>
+  <a href="#inicio" class="boton boton-claro">Volver al inicio ↑</a>
+</section>
+<section id="creditos" class="seccion creditos">
+  <div class="titulo-seccion">
+    <span class="etiqueta">Trabajo realizado en equipo</span>
+    <h2>📸 Créditos</h2>
+    <p>Este recurso educativo fue elaborado por:</p>
+  </div>
+  <div class="creditos-personas">
+    <article class="credito-persona">
+      <img src="imagenes/andres-gomez-diaz.jpeg" alt="Fotografía de Andrés Gómez Díaz" loading="lazy">
+      <h3>Andrés Gómez Díaz</h3>
+    </article>
+    <article class="credito-persona">
+      <img src="imagenes/omar-ortiz-martinez.jpeg" alt="Fotografía de Omar Ortiz Martínez" loading="lazy">
+      <h3>Omar Ortiz Martínez</h3>
+    </article>
+  </div>
+</section>
+</main>
+
+<div class="vueltiao" aria-hidden="true"></div>
+<footer>
+  <p>OVA educativo · Exploradores de Córdoba</p>
+  <p>Aprender, explorar y valorar nuestra región.</p>
+</footer>
+</body>
+</html>

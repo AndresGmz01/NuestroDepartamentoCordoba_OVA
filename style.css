@@ -1,0 +1,109 @@
+:root{--rio:#1b9ad6;--sol:#ffc52e;--palma:#178a4c;--palma-osc:#0f5c34;--coral:#ff6a55;--morado:#8a5cf6;--arena:#fff7e0;--texto:#26384a;--blanco:#fff;--sombra:0 6px 0 rgba(38,56,74,.14)}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{margin:0;font-family:"Nunito","Trebuchet MS",sans-serif;font-size:1.05rem;background:var(--arena);color:var(--texto);line-height:1.6}
+h1,h2,h3,.logo,.dato b,.boton,.chip{font-family:"Baloo 2","Trebuchet MS",sans-serif}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.vueltiao{height:16px;background:repeating-linear-gradient(90deg,#222 0 14px,#fff 14px 20px,#222 20px 26px,#fff 26px 40px)}
+
+.encabezado{background:var(--blanco);display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 6%;position:sticky;top:0;z-index:10}
+.logo{color:var(--palma);font-size:1.35rem;font-weight:800}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+nav a{font-weight:800;padding:4px 14px;border-radius:20px;transition:background .2s}
+nav a:hover{background:var(--sol)}
+
+.portada{min-height:460px;padding:60px 7%;display:flex;align-items:center;justify-content:space-between;gap:30px;background:radial-gradient(circle at 85% 20%,var(--sol) 0 70px,transparent 71px),linear-gradient(#bfe8ff,#e3f7d8);overflow:hidden}
+.portada-contenido{max-width:620px}
+.etiqueta{display:inline-block;background:var(--coral);color:#fff;padding:6px 16px;border-radius:25px;font-weight:800;transform:rotate(-2deg)}
+.portada h1{font-size:clamp(2.1rem,5vw,3.8rem);line-height:1.1;color:var(--palma-osc);margin:18px 0}
+.portada p{font-size:1.2rem;margin-bottom:28px}
+.guia{text-align:center;max-width:260px}
+.burbuja{background:#fff;border:3px solid var(--texto);border-radius:22px;padding:12px 16px;font-weight:800;position:relative;margin-bottom:18px}
+.burbuja::after{content:"";position:absolute;left:50%;bottom:-14px;width:22px;height:22px;background:#fff;border-right:3px solid var(--texto);border-bottom:3px solid var(--texto);transform:translateX(-50%) rotate(45deg)}
+.lorito{font-size:7rem;line-height:1;animation:saltar 1.6s ease-in-out infinite}
+@keyframes saltar{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-14px) rotate(4deg)}}
+
+.boton{display:inline-block;border:none;background:var(--palma);color:#fff;padding:12px 28px;border-radius:30px;font-size:1.15rem;font-weight:800;cursor:pointer;box-shadow:0 5px 0 var(--palma-osc);transition:transform .15s,box-shadow .15s}
+.boton:hover{transform:translateY(-2px)}
+.boton:active{transform:translateY(4px);box-shadow:0 1px 0 var(--palma-osc)}
+.boton-claro{background:#fff;color:var(--palma);box-shadow:0 5px 0 #b8d8c4}
+:is(.boton,button,a):focus-visible{outline:4px solid var(--morado);outline-offset:3px}
+
+.datos{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:30px 7% 0;max-width:1100px;margin:auto}
+.dato{border-radius:22px;padding:14px;text-align:center;font-weight:800;color:#fff;box-shadow:var(--sombra)}
+.dato b{display:block;font-size:2.2rem;line-height:1.1}
+.d1{background:var(--palma)}.d2{background:var(--rio)}.d3{background:var(--morado)}.d4{background:var(--coral)}
+
+.seccion{padding:64px 7%}
+.seccion-color{background:#e3f5ff}
+.titulo-seccion{max-width:740px;margin:0 auto 32px;text-align:center}
+.titulo-seccion h2{font-size:clamp(1.8rem,3.5vw,2.6rem);color:var(--palma-osc);margin:14px 0 4px}
+
+.video-contenedor{max-width:850px;margin:0 auto 28px;aspect-ratio:16/9;background:var(--texto);border:6px solid var(--sol);border-radius:26px;overflow:hidden;box-shadow:var(--sombra)}
+.video-contenedor iframe{display:block;width:100%;height:100%;border:0}
+.pregunta-video{max-width:850px;margin:auto;background:#fff;padding:26px;border-radius:26px;box-shadow:var(--sombra)}
+.pregunta-video h3{color:var(--rio);margin-top:0;font-size:1.5rem}
+
+.tarjetas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;max-width:1100px;margin:auto}
+.tarjetas.tres{grid-template-columns:repeat(3,minmax(0,1fr))}
+.tarjeta{background:#fff;padding:26px;border-radius:26px;box-shadow:var(--sombra);border-top:8px solid var(--c,var(--palma));transition:transform .2s}
+.tarjeta:nth-child(4n+1){--c:var(--palma)}.tarjeta:nth-child(4n+2){--c:var(--rio)}.tarjeta:nth-child(4n+3){--c:var(--coral)}.tarjeta:nth-child(4n){--c:var(--morado)}
+.tarjeta:hover{transform:rotate(-1.5deg) translateY(-4px)}
+.icono-tarjeta{font-size:3rem;line-height:1.2}
+.tarjeta h3{color:var(--c);margin:4px 0 6px;font-size:1.4rem}
+.tarjeta p{margin:0}
+
+.explorador{max-width:900px;margin:auto}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.chip{border:3px solid var(--rio);background:#fff;color:var(--rio);padding:4px 16px;border-radius:25px;font-size:1.05rem;font-weight:800;cursor:pointer;transition:transform .15s}
+.chip:hover{transform:scale(1.07)}
+.chip[aria-selected="true"]{background:var(--rio);color:#fff}
+.ficha{margin-top:22px;background:#fff;border-radius:26px;padding:26px;box-shadow:var(--sombra);display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;border-left:10px solid var(--sol)}
+.ficha .emoji{font-size:5rem;line-height:1}
+.ficha h3{margin:0;font-size:1.8rem;color:var(--palma-osc)}
+.ficha .zona{display:inline-block;background:var(--sol);padding:0 12px;border-radius:14px;font-weight:800;font-size:.95rem}
+.ficha ul{margin:10px 0 0;padding-left:20px}
+.ficha li{margin:4px 0}
+
+.juego{max-width:760px;margin:auto;padding:30px;background:#fff;border-radius:30px;box-shadow:var(--sombra);border:5px dashed var(--sol)}
+.juego-cabecera{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-weight:800;color:var(--palma)}
+.barra-progreso{height:18px;margin:14px 0 24px;border-radius:20px;background:#e8eef2;overflow:hidden}
+.barra{width:0;height:100%;background:repeating-linear-gradient(45deg,var(--sol) 0 14px,#ffb300 14px 28px);border-radius:20px;transition:width .4s}
+.juego h3{font-size:1.5rem;line-height:1.3}
+.opciones{display:grid;gap:12px;margin:18px 0}
+.opcion{width:100%;text-align:left;padding:14px 18px;border:3px solid #cfe3ee;border-radius:18px;background:#f4fbff;color:var(--texto);font-weight:700;cursor:pointer;transition:transform .15s,background .15s}
+.opcion:hover:not(:disabled){background:#dff3ff;border-color:var(--rio);transform:translateX(5px)}
+.opcion:disabled{cursor:default}
+.opcion.correcta{background:#d6f7de;border-color:#1f9d4d}
+.opcion.incorrecta{background:#ffe3de;border-color:#d9483a;animation:temblar .35s}
+@keyframes temblar{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.mensaje{font-weight:800;min-height:24px}
+.mensaje.exito{color:#1b7a38}.mensaje.error{color:#b13a30}
+.estrellas{font-size:2.6rem;letter-spacing:6px}
+
+.cierre{text-align:center;padding:60px 7%;background:linear-gradient(135deg,var(--palma-osc),var(--palma));color:#fff}
+.cierre h2{font-size:clamp(1.8rem,3vw,2.6rem);margin-top:0}
+.chips.claros{max-width:900px;margin:0 auto 28px}
+.chips.claros span{background:rgba(255,255,255,.18);border:2px solid rgba(255,255,255,.5);padding:2px 14px;border-radius:20px;font-weight:700}
+.creditos{background:#fff7e0}
+.creditos-personas{display:grid;grid-template-columns:repeat(2,minmax(0,280px));justify-content:center;gap:28px;max-width:700px;margin:0 auto}
+.credito-persona{background:#fff;padding:20px;border-radius:26px;text-align:center;box-shadow:var(--sombra);border-top:8px solid var(--palma)}
+.credito-persona:nth-child(2){border-top-color:var(--rio)}
+.credito-persona img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 25%;border-radius:18px}
+.credito-persona h3{color:var(--palma-osc);font-family:"Baloo 2","Trebuchet MS",sans-serif;font-size:1.35rem;margin:14px 0 0}
+footer{text-align:center;padding:20px;background:var(--palma-osc);color:#fff;font-size:.95rem}
+footer p{margin:2px}
+
+@media(max-width:800px){
+  .encabezado{flex-direction:column}
+  nav{justify-content:center}
+  .portada{flex-direction:column;text-align:center;padding:44px 6%}
+  .datos{grid-template-columns:repeat(2,1fr)}
+  .tarjetas,.tarjetas.tres{grid-template-columns:1fr}
+  .creditos-personas{grid-template-columns:minmax(0,1fr);max-width:340px}
+  .seccion{padding:48px 6%}
+  .ficha{grid-template-columns:1fr;text-align:center}
+  .ficha ul{text-align:left}
+  .juego{padding:20px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
